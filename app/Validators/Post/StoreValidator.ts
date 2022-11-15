@@ -1,6 +1,5 @@
 import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { column } from '@ioc:Adonis/Lucid/Orm'
 
 export class StoreValidator {
   constructor(protected ctx: HttpContextContract) {}
@@ -41,5 +40,7 @@ export class StoreValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {
+    'title.unique': 'O titulo precisa ser único',
+  }
 }
